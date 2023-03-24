@@ -30,12 +30,12 @@ public class PigGameState extends GameState {
         this.player1Score = player1Score;
     }
 
-    public int getCurrentPlayerTurn() {
-        return currentPlayerTurn;
+    public int getCurrentPlayerScore() {
+        return currentPlayerScore;
     }
 
-    public void setCurrentPlayerTurn(int currentPlayerTurn) {
-        this.currentPlayerTurn = currentPlayerTurn;
+    public void setCurrentPlayerScore(int currentPlayerScore) {
+        this.currentPlayerScore = currentPlayerScore;
     }
 
     public int getDiceValue() {
@@ -48,7 +48,7 @@ public class PigGameState extends GameState {
 
     private int player0Score;
     private int player1Score;
-    private int currentPlayerTurn;
+    private int currentPlayerScore;
     private int diceValue;
 
     public PigGameState(){
@@ -56,7 +56,7 @@ public class PigGameState extends GameState {
         diceValue = 1;
         player0Score = 0;
         player1Score = 0;
-        currentPlayerTurn = 0;
+        currentPlayerScore = 0;
     }
 
     public PigGameState(PigGameState piggameState) {
@@ -64,6 +64,6 @@ public class PigGameState extends GameState {
         player1Score = piggameState.getPlayer1Score();
         player0Score = piggameState.getPlayer0Score();
         diceValue = piggameState.getDiceValue();
-        currentPlayerTurn = piggameState.getCurrentPlayerTurn();
+        currentPlayerScore = piggameState.getCurrentPlayerScore();
     }
 }
