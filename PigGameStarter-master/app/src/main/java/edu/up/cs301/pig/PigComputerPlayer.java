@@ -31,18 +31,18 @@ public class PigComputerPlayer extends GameComputerPlayer {
      */
     @Override
     protected void receiveInfo(GameInfo info) {
-        PigGameState pigGameState = new PigGameState((PigGameState)info);
-        Random random = new Random();
-        if(pigGameState.getIdPLayerTurn() == playerNum){
+        PigGameState pgs = new PigGameState((PigGameState)info);
+        if(pgs.getIdPLayerTurn() != playerNum){
             return;
         }
+        Random random = new Random();
         if(random.nextBoolean()){
             sleep(2000);
             PigHoldAction pha = new PigHoldAction(this);
             this.game.sendAction(pha);
         }else{
             sleep(2000);
-            PigHoldAction pna = new PigHoldAction(this);
+            PigRollAction pna = new PigRollAction(this);
             this.game.sendAction(pna);
         }
     }//receiveInfo
